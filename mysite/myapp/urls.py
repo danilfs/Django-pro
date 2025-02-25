@@ -1,5 +1,5 @@
 from django.urls import path
-from myapp.views import index,contacts
+from myapp.views import index,contacts, indexItem
 
 
 urlpatterns = [
@@ -7,6 +7,7 @@ urlpatterns = [
 
   # http://127.0.0.1:8000/myapp/hello
   path('hello', index),
+  path('hello/<int:my_id>/', indexItem),
   # http://127.0.0.1:8000/myapp/contacts
   path('contacts', contacts)
 ]
