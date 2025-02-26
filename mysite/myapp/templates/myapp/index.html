@@ -8,8 +8,9 @@
 	<body>
 		<h1>This is index template :</h1>
 		<h2>
+			<!-- <a href="/myapp/items/{{item.id}}/"></a> -->
 			{% for item in items %}
-			<a href="/myapp/hello/{{item.id}}/">
+			<a href="{% url 'myapp:detail' item.id %}">
 				ID:{{item.id}} Имя:{{item.name}}, Цена:{{item.price}},
 				Описание:{{item.description}} <br />
 			<a>
