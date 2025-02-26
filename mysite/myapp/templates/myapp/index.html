@@ -7,6 +7,13 @@
 	</head>
 	<body>
 		<h1>This is index template :</h1>
-		<h2>{% for item in items %} {{item}} {% endfor %}</h2>
+		<h2>
+			{% for item in items %}
+			<a href="/myapp/hello/{{item.id}}/">
+				ID:{{item.id}} Имя:{{item.name}}, Цена:{{item.price}},
+				Описание:{{item.description}} <br />
+			<a>
+			{% endfor %}
+		</h2>
 	</body>
 </html>
