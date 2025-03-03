@@ -5,17 +5,33 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
-		<link rel="stylesheet" href="{% static 'myapp/styles.css' %}">
+		<!-- <link rel="stylesheet" href="{% static 'myapp/styles.css' %}" /> -->
+		<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 	</head>
-	<body class="bg-sky-500">
-		<h1>This is index template :</h1>
+	<body>
+		<nav>
+			<div>
+				<div>
+					<div>
+						<div class="flex">
+							<img
+								class="h-8 w-8"
+								src="{% static 'myapp/images/store.png' %}"
+								alt="logo-image"
+							/>
+							<span class="text-3xl">Professional shop</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
 		<h2>
 			<!-- <a href="/myapp/items/{{item.id}}/"></a> -->
 			{% for item in items %}
 			<a href="{% url 'myapp:detail' item.id %}">
 				ID:{{item.id}} Имя:{{item.name}}, Цена:{{item.price}},
 				Описание:{{item.description}} <br />
-			<a>
+			</a>
 			{% endfor %}
 		</h2>
 	</body>
