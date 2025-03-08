@@ -9,5 +9,10 @@ def index(request):
   }
   return render(request, "myapp/index.html", context)
 
-def contacts(request):
-  return render(request, "myapp/contacts.html")
+def indexItem(request, my_id):
+  item = Product.objects.get(id=my_id) 
+  context = {
+    'item' : item,
+  }
+  return render(request, "myapp/detail.html",context=context )
+

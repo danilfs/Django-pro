@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-	</head>
-	<body>
-		<h1>This is index template :</h1>
-		<h2>{% for item in items %} {{item}} {% endfor %}</h2>
-	</body>
-</html>
+{% extends "myapp/base.html" %} {% block content %}
+
+<h2>
+	<!-- <a href="/myapp/items/{{item.id}}/"></a> -->
+	{% for item in items %}
+	<a href="{% url 'myapp:detail' item.id %}">
+		ID:{{item.id}} Имя:{{item.name}}, Цена:{{item.price}},
+		Описание:{{item.description}} <br />
+		<img src="{{item.image.url}}" alt="" />
+	</a>
+	{% endfor %}
+</h2>
+{% endblock content %}

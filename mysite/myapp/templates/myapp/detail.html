@@ -1,0 +1,18 @@
+{% extends "myapp/base.html" %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- <link rel="stylesheet" href="{% static 'myapp/styles.css' %}" /> -->
+		<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+	</head>
+	<body class="bg-amber-600">
+		{% block content %}
+		<h1>
+			This detail page for: ID:{{item.id}} Имя:{{item.name}},
+			Цена:{{item.price}}, Описание:{{item.description}}
+		</h1>
+		{% endblock content %}
+	</body>
+</html>
