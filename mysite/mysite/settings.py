@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     
     'myapp',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +131,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
+
+LOGIN_REDIRECT_URL = 'myapp:index'
