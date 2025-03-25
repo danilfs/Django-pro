@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Product
+from django.contrib.auth import logout
+from django.contrib import messages
 
 def index(request):
 	items= Product.objects.all()
@@ -50,3 +52,9 @@ def delete_item(request, my_id):
 		'item' : item,
   }
 	return render(request, 'myapp/deleteitem.html', context)
+
+# def logout_view(request):
+#     logout(request)
+#     messages.success(request, "Вы успешно вышли из системы.")
+#     return render(request, "users/login.html")
+
