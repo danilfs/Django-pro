@@ -3,6 +3,7 @@ from .views import register, profile
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path
 from . import views
+from .views import seller_profile
 
 
 
@@ -16,6 +17,7 @@ urlpatterns = [
   path('login/', LoginView.as_view(template_name='users/login.html'), name='login'),
   path("logout/", views.logout_view, name="logout"),
   path("profile/", profile, name="profile"),
+  path("sellerprofile/<int:id>", seller_profile, name="sellerprofile"),
   # path('logout/', LogoutView.as_view(template_name='users/logout.html'), name='logout'),
   
   
